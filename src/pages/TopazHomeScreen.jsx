@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   Text,
   ScrollView,
-  Image,
+  Image, FlatList,
 } from 'react-native';
 import {AppContext} from '../components/AppContext';
 import TopazHeader from '../components/TopazHeader';
@@ -38,6 +38,8 @@ export default function TopazHomeScreen() {
     toggleRefresh(!shouldRefresh);
   };
 
+  const renderProduct = ({ item }) => <TopazMenuComponent item={item} />;
+
   return (
     <View style={styles.container}>
       <TopazHeader />
@@ -54,11 +56,13 @@ export default function TopazHomeScreen() {
         ))}
       </View>
 
-      <ScrollView style={styles.flex} contentContainerStyle={styles.main}>
-        {topazProducts[category].map((product, index) => (
-          <TopazMenuComponent key={index} item={product} />
-        ))}
-      </ScrollView>
+      <FlatList
+          data={topazProducts[category]}
+          renderItem={renderProduct}
+          keyExtractor={(item, index) => index.toString()}
+          contentContainerStyle={styles.main}
+          style={styles.flex}
+      />
     </View>
   );
 }
@@ -99,10 +103,8 @@ const styles = StyleSheet.create({
   main: {
     paddingBottom: 100,
     paddingHorizontal: 20,
-    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    flexWrap: 'wrap',
   },
   image: {
     width: '100%',

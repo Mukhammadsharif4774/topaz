@@ -101,30 +101,30 @@ const styles = StyleSheet.create({
     width: width * 0.95,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    height: 100,
+    height: 130,
   },
   image: {
     width: '45%',
-    height: 100,
+    height: 130,
     borderRadius: 12,
-    marginTop: 8,
   },
   details: {
     flex: 1,
     marginLeft: 10,
     justifyContent: 'space-between',
+    paddingVertical: 5
   },
   title: {
-    fontSize: 15,
+    fontSize: 14,
     fontFamily: FONTS.bold,
     color: COLORS.black,
-    width: '90%',
+    width: '95%',
   },
   description: {
     fontSize: 11,
     fontFamily: FONTS.light,
     color: COLORS.black,
-    width: '90%',
+    width: '95%',
     marginTop: 1,
   },
   currencyText: {

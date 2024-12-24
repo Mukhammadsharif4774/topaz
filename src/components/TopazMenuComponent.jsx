@@ -47,8 +47,9 @@ export default function ({item}) {
         style={{
           width: '55%',
           justifyContent: 'space-between',
-          height: 100,
+          height: 120,
           marginLeft: 10,
+          paddingVertical: 5,
         }}>
         <Text style={styles.title}>{item?.name}</Text>
 
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
   main: {
     width: '100%',
     alignSelf: 'center',
-    height: 100,
+    height: 120,
     marginTop: 35,
     backgroundColor: COLORS.white,
     flexDirection: 'row',
@@ -78,19 +79,18 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '45%',
-    height: 100,
+    height: 120,
     borderRadius: 12,
     alignSelf: 'center',
-    marginTop: 15,
   },
   title: {
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: FONTS.bold,
     color: COLORS.black,
     width: '100%',
   },
   description: {
-    fontSize: 12,
+    fontSize: 11,
     fontFamily: FONTS.light,
     color: COLORS.black,
     width: '100%',
@@ -113,13 +113,12 @@ const styles = StyleSheet.create({
   button: {
     fontFamily: FONTS.black,
     textAlign: 'center',
-    fontSize: 16,
+    fontSize: 13,
     color: COLORS.white,
     borderColor: COLORS.black,
     backgroundColor: COLORS.main,
-    width: width * 0.28,
     paddingHorizontal: 10,
-    paddingVertical: 3,
+    paddingVertical: 2,
     borderRadius: 8,
   },
 });
